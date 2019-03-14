@@ -1,18 +1,3 @@
-var cipher = {};
-
-var firstWord = "hello";
-var firstWordArray = firstWord.split("");
-
-var secondWord = "peter";
-var secondWordArray = secondWord.split("");
-
-var encodedWord = "";
-
-var firstEncodedWord = "svool";
-var firstEncodedWordArray = firstEncodedWord.split("");
-
-var decodedWord = "";
-
 function createFoldingCipher (input) {
     var inputArray = input.split("");
     console.log(inputArray);
@@ -31,6 +16,7 @@ function encode (wordArray) {
         }
     }
     console.log(encodedWord);
+    encodedWord = "";
 }
 
 function decode (wordArray) {
@@ -42,8 +28,19 @@ function decode (wordArray) {
         }
     }
     console.log(decodedWord);
+    decodedWord = "";
 }
 
+var firstWord = "hello";
+var firstWordArray = firstWord.split("");
+
+var encodedWord = "";
+
+var firstEncodedWord = "svool";
+var firstEncodedWordArray = firstEncodedWord.split("");
+
+var decodedWord = "";
+var cipher = {};
 
 createFoldingCipher ("abcdefghijklmnopqrstuvwxyz");
 
