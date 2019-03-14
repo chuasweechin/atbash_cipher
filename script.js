@@ -1,53 +1,49 @@
-function createFoldingCipher (input) {
+function createAtBashCipher (input) {
     var inputArray = input.split("");
 
     for (var a = 0; a < inputArray.length; a++) {
-        inputFromReverseDirection = inputArray[(inputArray.length - 1)  -  a]
-        cipher[inputArray[a]] =  inputFromReverseDirection;
+        var inputFromReverseDirection = inputArray[(inputArray.length - 1)  -  a]
+        atBashCipher[inputArray[a]] =  inputFromReverseDirection;
     }
 }
 
-function encode (wordArray) {
+function encode (word) {
+    var encodedWord = "";
+    var wordArray = word.split("");
+
     for (var a = 0; a < wordArray.length; a++) {
-        for (var code in cipher) {
+        for (var code in atBashCipher) {
             if (wordArray[a] === code) {
-                encodedWord = encodedWord + cipher[code];
+                encodedWord = encodedWord + atBashCipher[code];
             }
         }
     }
     console.log(encodedWord);
-    encodedWord = "";
 }
 
-function decode (wordArray) {
+function decode (word) {
+    var decodedWord = "";
+    var wordArray = word.split("");
+
     for (var a = 0; a < wordArray.length; a++) {
-        for (var code in cipher) {
-            if (wordArray[a] === cipher[code]) {
+        for (var code in atBashCipher) {
+            if (wordArray[a] === atBashCipher[code]) {
                 decodedWord = decodedWord + code;
             }
         }
     }
     console.log(decodedWord);
-    decodedWord = "";
 }
 
+var atBashCipher = {};
+
 var firstWord = "hello";
-var firstWordArray = firstWord.split("");
-
-var encodedWord = "";
-
 var firstEncodedWord = "svool";
-var firstEncodedWordArray = firstEncodedWord.split("");
 
-var decodedWord = "";
-var cipher = {};
-
-createFoldingCipher ("abcdefghijklmnopqrstuvwxyz");
+createAtBashCipher ("abcdefghijklmnopqrstuvwxyz");
 
 var userInput = prompt("Input a word to be encoded");
-var userInputArray = userInput.split("");
 
-encode(userInputArray);
-
-encode(firstWordArray);
-decode(firstEncodedWordArray);
+encode(userInput);
+encode(firstWord);
+decode(firstEncodedWord);
