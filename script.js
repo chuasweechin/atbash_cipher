@@ -1,6 +1,6 @@
 function createFoldingCipher (input) {
     var inputArray = input.split("");
-    console.log(inputArray);
+
     for (var a = 0; a < inputArray.length; a++) {
         inputFromReverseDirection = inputArray[(inputArray.length - 1)  -  a]
         cipher[inputArray[a]] =  inputFromReverseDirection;
